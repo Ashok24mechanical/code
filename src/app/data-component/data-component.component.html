@@ -1,0 +1,36 @@
+
+<div>
+    <app-filter
+    [total]="free()"
+    [FreeCourses]="freecourse()" 
+    [PremiumCourses]="premiumcourse()" 
+    (events)="filter($event)"
+    (textchange)="receiveddata($event)">
+    ></app-filter>
+</div>
+
+<div class="row">
+    <ng-container *ngFor="let course of Courses">
+        <div class="column" *ngIf="selected === 'AllCourse'  ||  selected === course.type">
+            <div class="card mt-4">
+                <img [src]="course.img" alt="" style="height: 13em;">
+                <div class="card-title">
+                    <h3>{{course.name}}</h3>
+                </div>
+                <div class="card-text">{{course.decription}}</div>
+                <div class="Details">
+                    <div [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}">
+                        <h5><b>{{course.type}}</b></h5>
+                    </div>
+                    <div>
+                        <h5><b>Price:</b> {{course.price}}</h5>
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="bte"> <input type="button" class="btn btn-primary" value="Show More"></div>
+                    <div class="bte"><input type="button" class="btn btn-success" value="Buy Now"></div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="container">
+        <h1>E-Learning</h1>
+        <div class="filter">
+            <span>Filters:</span>
+            <input type="radio" name="AllCourse" [(ngModel)]="select" (change)="selectedbtn()" id="AllCourse"
+                value="AllCourse">
+            <span>{{'All:('+AllCourse+')'}}</span>
+            <input type="radio" name="filters" id="FreeCourses" value="Free" [(ngModel)]="select"
+                (change)="selectedbtn()">
+            <span>{{'FreeCourses:('+FreeCourses+')'}}</span>
+            <input type="radio" name="filters" id="PremiumCourses" value="Premium" [(ngModel)]="select"
+                (change)="selectedbtn()">
+            <span>{{'PremiumCourses:('+PremiumCourses+')'}}</span>
+        </div>
+    </div>
+</div>
